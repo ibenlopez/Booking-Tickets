@@ -1,0 +1,19 @@
+/* ---HEADER--- */
+.header   
+{
+    background-image: url(../img/banner-01.png);
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50vh;
+}
+ul .opcion
+{
+    list-style:none;
+}
+.section-search .inputBuscar input
+{
+    width: 60vw;
+}
