@@ -1,6 +1,7 @@
 /* ---HEADER--- */
-.header   
-{
+
+/* --- Seccion Navbar --- */
+.header {
     background-image: url(../img/banner-01.png);
     background-color: rgba(255, 255, 255, 0.6) !important;
     background-blend-mode: overlay;
@@ -9,11 +10,24 @@
     background-position: center;
     height: 50vh;
 }
-ul .opcion
-{
-    list-style:none;
+
+.navbar-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
-.section-search .inputBuscar input
-{
-    width: 60vw;
+
+ul .opcion {
+    list-style: none;
+    text-decoration: none;
+}
+
+ul .opcion a {
+    text-decoration: none;
+    color: #000;
+}
+
+.section-search .inputBuscar input {
+    width: 85vw;
+    height: 50px;
 }
