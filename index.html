@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Tickets</title>
-    <script src="./script.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/img/icon.png">
     <link rel="stylesheet" href="./assets/css/booking-tickets.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,7 +19,7 @@
     <main>
 
         <!-- Seccion de navbar -->
-        <nav class="navbar-container d-flex flex-row justify-content-between p-3">
+        <nav class="navbar-container d-flex flex-row justify-content-between p-3" id="navbar__container">
             <!-- Offcanva para opciones en dispositivos pequeños -->
             <section class="d-flex align-items-center">
                 <button class="btn d-block d-md-none me-3" type="button" data-bs-toggle="offcanvas"
@@ -29,12 +29,12 @@
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
-                        <img src="./assets/img/logo.png" alt="logotipo" width="150">
+                        <img src="./assets/img/logo-light.jpg" alt="logotipo" width="150">
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <!-- lista de opciones del navbar en el offcanva-->
-                        <ul class="lista-opciones d-flex flex-column align-items-start gap-4">
+                        <ul class="lista-opciones d-flex flex-column align-items-start gap-4" id="nav__options__mobile">
                             <li class="opcion"><a href="#">Ofertas</a></li>
                             <li class="opcion"><a href="#">Conciertos</a></li>
                             <li class="opcion"><a href="#">Géneros</a></li>
@@ -44,12 +44,14 @@
                     </div>
                 </div>
 
-                <img src="./assets/img/logo.png" alt="logotipo" width="150">
+                <img src="./assets/img/logo-dark.jpg" alt="logotipo" width="150" id="nav__logo__dark">
+                <img src="./assets/img/logo-light.jpg" alt="logotipo" width="150" id="nav__logo__light" class="d-none">
             </section>
 
             <!-- lista de opciones del navbar -->
-            <ul class="lista-opciones d-none d-md-flex justify-content-start align-items-center gap-4">
-                <li class="opcion"><a href="#">Ofertas</a></li>
+            <ul class="lista-opciones d-none d-md-flex justify-content-start align-items-center gap-4"
+                id="nav__options__web">
+                <li class="opcion"><a href="#" class="options-black-theme">Ofertas</a></li>
                 <li class="opcion"><a href="#">Conciertos</a></li>
                 <li class="opcion"><a href="#">Géneros</a></li>
                 <li class="opcion"><a href="#">Contacto</a></li>
@@ -62,15 +64,14 @@
         </nav>
 
         <!-- Header -->
-        <header class="header d-flex flex-column p-4 mb-5">
+        <header class="header d-flex flex-column p-4 mb-5" id="header">
             <!-- Seccion de busqueda -->
             <section class="section-search text-center">
                 <h1 class="fw-bold mb-4">BUSCA Y COMPARA PRECIOS DE ENTRADAS</h1>
 
                 <!-- Input de busqueda -->
                 <section class="inputBuscar d-flex flex-row justify-content-center">
-                    <input id="#" class="form-control" type="search" placeholder="Busca un evento...">
-                    <button id="#" class="btn-buscar btn btn-danger fs-6 fs-md-5">Buscar</button>
+                    <input id="#" class="form-control" type="search" placeholder="Busca un evento..." oninput="buscar_Conciertos(event.target.value)">
                 </section>
             </section>
         </header>
@@ -79,160 +80,19 @@
         <section class="eventos ms-sm-5 me-sm-5 ms-2 me-2 mb-5">
 
             <!-- Fila 1 -->
-            <section class="d-flex flex-row gap-3 justify-content-center flex-wrap">
+            <section class="d-flex flex-row gap-3 justify-content-center flex-wrap" id="concerts_container">
 
                 <!-- Concierto 1 -->
-                <section class="col col-11 col-sm-5 col-lg-3">
+                <section class="col col-11 col-sm-5 col-lg-3" id="concert__template">
                     <div class="card">
                         <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-01.jpg" alt="concierto"
+                            <img class="img-fluid rounded" src="" alt="concierto"
                                 width="350">
                         </div>
                         <div class="card-body text-center">
                             <div class="text-card mb-3">
-                                <p>Feid: Ferxxocalipsis Tour</p>
-                                <small>Fecha de evento: 08/09/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 2 -->
-                <section class="col col-11 col-sm-5 col-lg-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-02.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>World's Hottest Tour</p>
-                                <small>Fecha de evento: 25/09/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 3 -->
-                <section class="col col-11 col-lg-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-04.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>Young Miko</p>
-                                <small>Fecha de evento: 11/10/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 4 -->
-                <section class="col col-11 col-sm-5 col-lg-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-05.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>Si ayer fuera hoy tour</p>
-                                <small>Fecha de evento: 15/10/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- Concierto 5 -->
-                <section class="col col-11 col-sm-5 col-lg-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-09.png" alt="concierto"
-                                width="350" height="400">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>Tiago PZK: GOTTIA Tour</p>
-                                <small>Fecha de evento: 12/12/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 6 -->
-                <section class="col col-11 col-lg-3">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-06.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>Cerrando ciclos tour</p>
-                                <small>Fecha de evento: 26/12/2024</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 7 -->
-                <section class="col col-11 col-sm-5 col-lg-4">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-07.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>Reik: Panorama</p>
-                                <small>Fecha de evento: 08/01/2025</small>
-                            </div>
-                            <div class="buttons">
-                                <button class="btn btn-outline-danger">+ Info</button>
-                                <button class="btn btn-danger">Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Concierto 8 -->
-                <section class="col col-11 col-sm-5 col-lg-4">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <img class="img-fluid rounded" src="./assets/img/concierto-08.jpg" alt="concierto"
-                                width="350">
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="text-card mb-3">
-                                <p>greeicy: Yeliana tour</p>
-                                <small>Fecha de evento: 02/11/2024</small>
+                                <p></p>
+                                <small></small>
                             </div>
                             <div class="buttons">
                                 <button class="btn btn-outline-danger">+ Info</button>
@@ -245,7 +105,7 @@
         </section>
     </main>
 
-    <script src="script.js"></script> <!-- Script de JS -->
+    <script src="./script.js"></script> <!-- Script de JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
