@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Funcion cambiar apariencia de navbar
     function cambiar_Navbar_Apariencia() {
         const encabezado = document.getElementById('header');
+        const burgerBotton = document.getElementById('nav-small-button');
         const rectEncabezado = encabezado.getBoundingClientRect();
         const windowHeightEncabezado = window.innerHeight || document.documentElement.clientHeight;
         const nav = document.getElementById('navbar__container');
@@ -65,9 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const logoLight = document.getElementById('nav__logo__light');
         if (rectEncabezado.top >= 0 && rectEncabezado.bottom <= windowHeightEncabezado) {
             nav.classList.remove('nav-light-theme');
+            burgerBotton.classList.add('btn-light-theme');
             logoDark.classList.remove('d-none');
             logoLight.classList.add('d-none');
-            burgerBotton.classList.add('btn-light-theme');
             for (let index = 0; index < options.children.length; index++) {
                 const element = options.children[index];
                 element.children[0].classList.remove('options-light-theme');
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         else {
             nav.classList.add('nav-light-theme');
+            burgerBotton.classList.remove('btn-light-theme');
             const logoDark = document.getElementById('nav__logo__dark');
             const logoLight = document.getElementById('nav__logo__light');
             logoDark.classList.add('d-none');

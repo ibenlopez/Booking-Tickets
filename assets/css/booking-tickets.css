@@ -11,6 +11,10 @@
     color: white;
 }
 
+.navbar-container section .btn-light-theme i{
+    color: white;
+}
+
 .navbar-container {
     position: sticky;
     top: 0;
