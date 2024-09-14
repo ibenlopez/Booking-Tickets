@@ -36,7 +36,8 @@ function cargar_Cards_Conciertos(listaDeConciertos){
         // Asignar valores dinámicos
         tarjetaOriginal.querySelector('img').src = concierto.foto;
         tarjetaOriginal.querySelector('p').textContent = concierto.nombre;
-        tarjetaOriginal.querySelector('small').textContent = `Fecha de evento: ${concierto.fecha}`;
+        tarjetaOriginal.querySelector('.date-event').innerHTML = `<i class="fa-regular fa-calendar-days fs-5 mb-2"></i> : ${concierto.fecha}`;
+        tarjetaOriginal.querySelector('.location-event').innerHTML = `<i class="fa-solid fa-location-dot fs-5"></i> : ${concierto.ubicacion}`;
 
         // Insertar la tarjeta clonada en el elemento contenedor de los conciertos
         concertsContainer.appendChild(tarjetaOriginal);
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.classList.remove('nav-light-theme');
             logoDark.classList.remove('d-none');
             logoLight.classList.add('d-none');
+            burgerBotton.classList.add('btn-light-theme');
             for (let index = 0; index < options.children.length; index++) {
                 const element = options.children[index];
                 element.children[0].classList.remove('options-light-theme');

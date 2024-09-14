@@ -22,7 +22,7 @@
         <nav class="navbar-container d-flex flex-row justify-content-between p-3" id="navbar__container">
             <!-- Offcanva para opciones en dispositivos pequeños -->
             <section class="d-flex align-items-center">
-                <button class="btn d-block d-md-none me-3" type="button" data-bs-toggle="offcanvas"
+                <button class="btn d-block d-md-none me-3" id="nav-small-button" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
                         class="fa-solid fa-bars fs-3"></i></button>
 
@@ -82,7 +82,7 @@
             <!-- Fila 1 -->
             <section class="d-flex flex-row gap-3 justify-content-center flex-wrap" id="concerts_container">
 
-                <!-- Concierto 1 -->
+                <!-- Concierto  -->
                 <section class="col col-11 col-sm-5 col-lg-3" id="concert__template">
                     <div class="card">
                         <div class="card-header text-center">
@@ -92,7 +92,9 @@
                         <div class="card-body text-center">
                             <div class="text-card mb-3">
                                 <p></p>
-                                <small></small>
+                                <small class="date-event"></small> <br>
+                                <small class="location-event"></small>
+
                             </div>
                             <div class="buttons">
                                 <button class="btn btn-outline-danger">+ Info</button>

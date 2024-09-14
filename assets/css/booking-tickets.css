@@ -26,10 +26,12 @@
     color: black;
     transition: .5s;
 }
-#nav__options__web li a{
+
+#nav__options__web li a {
     color: white;
     transition: .5s;
 }
+
 #nav__options__web li .options-light-theme {
     color: black;
     transition: .5s;
